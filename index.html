@@ -1,12 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Lucie Hodac</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <img src="luciehodac.png" alt="" />
+    <header>
+      <img src="Jmeno_web.svg" alt="Logo" class="logo" />
+      <nav>
+        <div class="menu-icon" id="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="menu">
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <p></p>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <div class="portfolio-item" data-title="Chata U Skota">
+        <img src="nahled_chata_u_skota.gif" alt="nahled_chata_u_skota" />
+      </div>
+      <div class="portfolio-item" data-title="Illustrations">
+        <img src="nahled_illustrations.png" alt="Projekt 2" />
+      </div>
+      <div class="portfolio-item" data-title="Artemis">
+        <img src="obr.png" alt="Projekt 3" />
+      </div>
+      <div
+        class="portfolio-item"
+        data-title="Something different that it may seem"
+      >
+        <img src="nahled_diplomka.png" alt="Projekt 4" />
+      </div>
+      <div class="portfolio-item" data-title="Projekt 5">
+        <img src="obr.png" alt="Projekt 5" />
+      </div>
+      <div class="portfolio-item" data-title="Projekt 6">
+        <img src="obr.png" alt="Projekt 6" />
+      </div>
+      <div class="portfolio-item" data-title="Projekt 7">
+        <img src="obr.png" alt="Projekt 7" />
+      </div>
+      <div class="portfolio-item" data-title="Projekt 8">
+        <img src="obr.png" alt="Projekt 8" />
+      </div>
+      <div class="portfolio-item" data-title="Projekt 9">
+        <img src="zkouska.gif" alt="Projekt 9" />
+      </div>
+      <div class="portfolio-item" data-title="Projekt 10">
+        <img src="obr.png" alt="Projekt 10" />
+      </div>
+      <div class="portfolio-item" data-title="Projekt 11">
+        <img src="obr.png" alt="Projekt 11" />
+      </div>
+      <div class="portfolio-item" data-title="Projekt 12">
+        <img src="obr.png" alt="Projekt 12" />
+      </div>
+      <div class="portfolio-item" data-title="Projekt 13">
+        <img src="obr.png" alt="Projekt 13" />
+      </div>
+      <div class="portfolio-item" data-title="Projekt 14">
+        <img src="obr.png" alt="Projekt 14" />
+      </div>
+      <div class="portfolio-item" data-title="Projekt 15">
+        <img src="obr.png" alt="Projekt 15" />
+      </div>
+      <div class="portfolio-item" data-title="Projekt 16">
+        <img src="obr.png" alt="Projekt 16" />
+      </div>
+      <div class="portfolio-item" data-title="Projekt 17">
+        <img src="obr.png" alt="Projekt 17" />
+      </div>
+      <div class="portfolio-item" data-title="Projekt 18">
+        <img src="obr.png" alt="Projekt 18" />
+      </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="about-content">
+        <img src="obr.png" alt="About Me" class="about-img" />
+        <div class="about-text">
+          <h2>About</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
+            consectetur metus, eu egestas libero.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="contact-content">
+        <div class="contact-text">
+          <h2>Contact</h2>
+          <p>Pokud máte zájem o naše služby, neváhejte nás kontaktovat!</p>
+        </div>
+        <img src="obr.png" alt="Contact" class="contact-img" />
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-icons">
+        <img src="instagram.svg" alt="insta" />
+        <img src="facebook.svg" alt="fb" />
+        <img src="behance.svg" alt="be" />
+        <img src="linkedin.svg" alt="in" />
+      </div>
+    </footer>
+
+    <script>
+      // JavaScript pro menu na mobilních zařízeních
+      const menuIcon = document.getElementById("menu-icon");
+      const menu = document.getElementById("menu");
+
+      menuIcon.addEventListener("click", () => {
+        menu.classList.toggle("show");
+      });
+    </script>
   </body>
 </html>

@@ -1,1 +1,272 @@
+/* Reset základního stylu */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #faf5ed;
+  color: #3f3f3e;
+  font-family: "GopherDisplay", sans-serif;
+}
+
+header {
+  background-color: #faf5ed;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@font-face {
+  font-family: "GopherDisplay";
+  src: url("fonts/GopherDisplay-Light.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.logo {
+  width: 300px; /* Nastavení šířky loga */
+  height: auto; /* Automatická výška podle šířky */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  display: none; /* Skrytí ikonky pro desktop */
+}
+
+.menu-icon span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #3f3f3e;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Menu bude standardně skryté */
+#menu {
+  list-style: none;
+  display: flex; /* Zobrazit menu na desktopu */
+  align-items: center;
+  margin-left: auto; /* Posunout menu na pravou stranu */
+}
+
+#menu li {
+  margin: 0 10px; /* Zmenšení mezery mezi položkami */
+}
+
+#menu li a {
+  text-decoration: none;
+  color: #3f3f3e;
+  padding: 15px;
+  transition: color 0.3s; /* Přidání přechodu pro změnu barvy */
+}
+
+#menu li a:hover {
+  color: #ffd3e3; /* Změna barvy textu při najetí */
+}
+
+/* Hero sekce */
+.hero {
+  padding: 90px;
+  background-color: #faf5ed;
+}
+
+/* Portfolio */
+.portfolio {
+  padding: 5px;
+  text-align: center;
+}
+
+.portfolio-item {
+  display: inline-block;
+  margin: 10px; /* Zmenšení mezery mezi obrázky */
+  text-align: center;
+}
+
+.portfolio-item img {
+  width: 408px; /* Nastavit šířku */
+  height: 408px; /* Nastavit výšku, aby obrázky měly tvar čtverce */
+  object-fit: cover; /* Udržet poměr stran obrázku a vyplnit čtverec */
+  border-radius: 0; /* Odstranit zaoblení rohů */
+}
+/* Portfolio - animace obrázků */
+.portfolio-item {
+  display: inline-block;
+  position: relative; /* Přidání relativní pozice pro vnořený text */
+  margin: 10px; /* Větší mezera mezi obrázky */
+  width: 400px; /* Nastavení šířky obrázku */
+  height: 400px; /* Nastavení výšky obrázku */
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Udržení poměru stran obrázku */
+  border-radius: 0; /* Odstranit zaoblení rohů */
+  transition: opacity 0.3s, background-color 0.3s; /* Přechod pro opacity a pozadí */
+}
+
+.portfolio-item:hover img {
+  opacity: 1; /* Změna opacity při najetí */
+}
+
+.portfolio-item::before {
+  content: attr(data-title); /* Zobrazí text z data-title */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #3f3f3e;
+  font-size: 1.5rem;
+  text-align: center;
+  opacity: 0; /* Skrytý text na začátku */
+  transition: opacity 0.3s; /* Přechod pro opacity */
+}
+
+.portfolio-item:hover::before {
+  opacity: 1; /* Zobrazení textu při najetí */
+  background-color: #ffd3e3; /* Barva pozadí při najetí */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Patička */
+footer {
+  background-color: #faf5ed;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .footer-icons {
+  display: flex;
+  gap: 15px; /* Mezera mezi ikonami */
+}
+
+footer .footer-icons img {
+  width: 40px; /* Šířka ikon */
+  height: 40px; /* Výška ikon */
+  object-fit: cover; /* Udržení poměru stran */
+}
+
+/* Responsive design - zobrazení pouze na menších zařízeních */
+@media (max-width: 768px) {
+  /* Zobrazení hamburger ikony na menších obrazovkách */
+  .menu-icon {
+    display: block;
+  }
+
+  #menu {
+    display: none; /* Skrytí menu na menších obrazovkách */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background-color: #ffd3e3;
+  }
+
+  #menu.show {
+    display: block;
+    /* Zobrazení menu při aktivaci */
+  }
+
+  #menu li {
+    margin: 0;
+  }
+
+  #menu li a {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #menu li a:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+/* About sekce */
+.about {
+  padding: 50px 20px;
+  display: flex;
+  align-items: center;
+  background-color: #faf5ed;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url(zkouskapozadi.png);
+}
+
+.about-img {
+  width: 500px;
+  height: auto;
+}
+
+.about-text {
+  width: 50%;
+  padding: 20px;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.2rem;
+  color: #3f3f3e;
+}
+
+/* Kontakt sekce */
+.contact {
+  padding: 50px 20px;
+  display: flex;
+  align-items: center;
+  background-color: #faf5ed;
+  margin-bottom: 0px;
+}
+
+.contact-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-text {
+  width: 50%;
+  padding: 20px;
+  text-align: right; /* Text napravo */
+}
+
+.contact-img {
+  width: 50%;
+  height: auto;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  color: #3f3f3e;
+}
