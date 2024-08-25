@@ -15,8 +15,8 @@ body {
 header {
   background-color: #faf5ed;
   padding-top: 30px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 90px;
+  padding-right: 70px;
 
   display: flex;
   align-items: center;
@@ -33,11 +33,14 @@ header {
 .logo {
   width: 300px; /* Nastavení šířky loga */
   height: auto; /* Automatická výška podle šířky */
+  position: fixed;
+  z-index: 9999;
 }
 
 nav {
   display: flex;
   align-items: center;
+  margin-left: auto;
 }
 
 .menu-icon {
@@ -82,6 +85,53 @@ nav {
   background-color: #faf5ed;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  overflow: hidden;
+}
+
+.scroll {
+  white-space: nowrap;
+  font-size: 0.35rem;
+  margin: 0 2em;
+}
+
+.scroll p {
+  font-size: 5em;
+  color: #3f3f3e;
+  margin-bottom: 0;
+  line-height: 0.5em;
+}
+
+.RightToLeft {
+  animation: RightToLeft 30s infinite linear;
+}
+
+.LeftToRight {
+  animation: LeftToRight 30s infinite linear;
+}
+
+@keyframes RightToLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes LeftToRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
 /* Portfolio */
 .portfolio {
   padding: 5px;
@@ -95,8 +145,8 @@ nav {
 }
 
 .portfolio-item img {
-  width: 408px; /* Nastavit šířku */
-  height: 408px; /* Nastavit výšku, aby obrázky měly tvar čtverce */
+  width: 430px; /* Nastavit šířku */
+  height: 430px; /* Nastavit výšku, aby obrázky měly tvar čtverce */
   object-fit: cover; /* Udržet poměr stran obrázku a vyplnit čtverec */
   border-radius: 0; /* Odstranit zaoblení rohů */
 }
@@ -104,9 +154,9 @@ nav {
 .portfolio-item {
   display: inline-block;
   position: relative; /* Přidání relativní pozice pro vnořený text */
-  margin: 10px; /* Větší mezera mezi obrázky */
-  width: 400px; /* Nastavení šířky obrázku */
-  height: 400px; /* Nastavení výšky obrázku */
+  margin: 8px; /* Větší mezera mezi obrázky */
+  width: 430px; /* Nastavení šířky obrázku */
+  height: 430px; /* Nastavení výšky obrázku */
 }
 
 .portfolio-item img {
@@ -142,26 +192,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Patička */
-footer {
-  background-color: #faf5ed;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-footer .footer-icons {
-  display: flex;
-  gap: 15px; /* Mezera mezi ikonami */
-}
-
-footer .footer-icons img {
-  width: 40px; /* Šířka ikon */
-  height: 40px; /* Výška ikon */
-  object-fit: cover; /* Udržení poměru stran */
 }
 
 /* Responsive design - zobrazení pouze na menších zařízeních */
@@ -202,7 +232,6 @@ footer .footer-icons img {
 
 /* About sekce */
 .about {
-  padding: 50px 20px;
   display: flex;
   align-items: center;
   background-color: #faf5ed;
@@ -211,17 +240,22 @@ footer .footer-icons img {
 .about-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-image: url(zkouskapozadi.png);
+
+  width: 100%; /* Šířka sekce bude 100% */
+  min-height: 750px;
+  padding: 0 50px;
 }
 
 .about-img {
-  width: 500px;
-  height: auto;
+  width: auto;
+  height: 300px;
+  padding-left: 20px;
 }
 
 .about-text {
-  width: 50%;
+  width: 60%;
   padding: 20px;
 }
 
@@ -231,7 +265,7 @@ footer .footer-icons img {
 }
 
 .about p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #3f3f3e;
 }
 
@@ -253,20 +287,59 @@ footer .footer-icons img {
 .contact-text {
   width: 50%;
   padding: 20px;
+  padding-top: 70px;
   text-align: right; /* Text napravo */
 }
 
 .contact-img {
-  width: 50%;
+  width: 27%;
   height: auto;
+  margin-right: 400px;
 }
 
 .contact h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
 }
 
 .contact p {
   font-size: 1.2rem;
   color: #3f3f3e;
+}
+/* Patička */
+footer {
+  background-color: #faf5ed;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .footer-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+footer .footer-icons img {
+  width: 40px; /* Šířka ikon */
+  height: 40px; /* Výška ikon */
+  object-fit: cover; /* Udržení poměru stran */
+}
+footer .rights {
+  text-align: center;
+  color: #3f3f3e;
+}
+
+footer .footer-icons a img {
+  width: 40px; /* Šířka ikon */
+  height: 40px; /* Výška ikon */
+  transition: filter 0.3s ease; /* Přidání přechodu pro změnu barvy */
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%)
+    contrast(100%); /* Výchozí barva */
+}
+
+footer .footer-icons a:hover img {
+  filter: invert(92%) sepia(13%) saturate(2875%) hue-rotate(304deg)
+    brightness(156%) contrast(90%); /* Barva #FFD3E3 při najetí myši */
 }
