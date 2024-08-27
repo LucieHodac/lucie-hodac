@@ -245,9 +245,10 @@ nav {
 }
 
 .about-img {
-  width: auto;
-  height: 300px;
+  width: 30%;
+  height: auto;
   padding-left: 20px;
+  max-width: 100%;
 }
 
 .about-text {
